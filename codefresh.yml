@@ -1,0 +1,14 @@
+version: '1.0'
+
+steps:
+
+  build-jjwt:
+    type: build
+    description: jjwt
+    image-name: dleblanc/jjwt-test
+    dockerfile: Dockerfile
+    tag: latest
+  Unit-tests:
+    image: ${{build-jjwt}}
+    commands:
+        - echo $(date)
