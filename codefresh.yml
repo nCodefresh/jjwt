@@ -10,10 +10,9 @@ steps:
     tag: latest
   Unit-tests:
     image: ${{build-jjwt}}
+    fail-fast: false
     commands:
         - echo $(date)
         - env
-        - echo The CF volume is here: $CF_VOL
-    environment:
-        - CF_VOL=${{CF_VOLUME}}
-
+        - cat foo.txt; true
+        - echo foo > foo.txt
