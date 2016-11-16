@@ -12,5 +12,7 @@ steps:
     image: ${{build-jjwt}}
     commands:
         - echo $(date)
-        - echo The CF volume is here: ${{CF_VOLUME}}
+        - echo The CF volume is here: $(CF_VOL)
+    environment:
+        - CF_VOL=${{CF_VOLUME}}
 
