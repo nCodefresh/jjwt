@@ -1,0 +1,10 @@
+version: '1.0'
+
+steps:
+    build-step:
+      type: build
+      description: Maven example
+      dockerfile: Dockerfile
+      image-name: dleblanc/jjwt-test
+      tag: ${{CF_BRANCH}}
+
