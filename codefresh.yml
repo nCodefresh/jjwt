@@ -12,5 +12,5 @@ steps:
     image: ${{build-jjwt}}
     commands:
         - echo $(date)
-        - mvn dependency:go-offline
+        - echo The CF volume is here: ${{CF_VOLUME}}
 
