@@ -17,9 +17,8 @@ steps:
         - env
         - cat foo.txt; true
         - echo foo > foo.txt
-   validateFoo
+   validateFoo:
      image : ${{build-jjwt}}
      working-directory: ${{initial-clone}}
      commands:
-         - ls 
-     
+         - ls
