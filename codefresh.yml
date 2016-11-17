@@ -2,14 +2,14 @@ version: '1.0'
 
 steps:
 
-#  build-jjwt:
-#    type: build
-#    description: jjwt
-#    image-name: dleblanc/jjwt-test
-#    dockerfile: Dockerfile
-#    tag: latest
+  build_jjwt:
+    type: build
+    description: jjwt
+    image-name: dleblanc/jjwt-test
+    dockerfile: Dockerfile
+    tag: latest
   unit_tests:
-    image: alpine:3.4
+    image: ${{build_jjwt}}
     working-directory: ${{initial-clone}}
     fail-fast: false
     commands:
@@ -22,7 +22,7 @@ steps:
         - ls .
         - echo $PWD
   validateFoo:
-     image : ${{unit_tests}}
+     image: ${{build_jjwt}}
      working-directory: ${{initial-clone}}
      commands:
          - ls

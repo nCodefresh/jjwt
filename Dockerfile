@@ -1,10 +1,3 @@
-FROM maven:3.3.9-jdk-8
-
-COPY . /src
-#WORKDIR /src
+FROM alpine:3.4
 
 RUN env
-
-# Running the service - since this isn't a service, this is just a placeholder
-#CMD ["mvn", "test"]
-CMD ["/bin/echo", "bye"]
