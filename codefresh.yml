@@ -2,27 +2,26 @@ version: '1.0'
 
 steps:
 
-  build-jjwt:
-    type: build
-    description: jjwt
-    image-name: dleblanc/jjwt-test
-    dockerfile: Dockerfile
-    tag: latest
-  Unit-tests:
-    image: ${{build-jjwt}}
+#  build-jjwt:
+#    type: build
+#    description: jjwt
+#    image-name: dleblanc/jjwt-test
+#    dockerfile: Dockerfile
+#    tag: latest
+  unit_tests:
+    image: alpine:3.4
     working-directory: ${{initial-clone}}
     fail-fast: false
     commands:
         - echo $(date)
         - env
         - ls .
-        - mkdir ./cache
         - echo "WHAT IS GOING ON!"
-        - cat ./foo.txt; true
+        - cat ./foo.txt
         - echo foo > foo.txt
         - echo $PWD
   validateFoo:
-     image : ${{build-jjwt}}
+     image : ${{unit_tests}}
      working-directory: ${{initial-clone}}
      commands:
          - ls
