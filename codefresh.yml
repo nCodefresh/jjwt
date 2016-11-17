@@ -15,7 +15,7 @@ steps:
     commands:
         - echo $(date)
         - env
-        - cat foo.txt; true
+        - cat ./foo.txt; true
         - echo foo > foo.txt
   validateFoo:
      image : ${{build-jjwt}}
