@@ -17,8 +17,9 @@ steps:
         - env
         - ls .
         - echo "WHAT IS GOING ON!"
-        - cat ./foo.txt
         - echo foo > foo.txt
+        - echo After creation of file
+        - ls .
         - echo $PWD
   validateFoo:
      image : ${{unit_tests}}
