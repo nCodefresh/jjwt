@@ -29,3 +29,4 @@ steps:
      commands:
         - pwd
         - ls
+        - cat foo.txt
