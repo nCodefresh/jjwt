@@ -8,21 +8,24 @@ steps:
     image-name: dleblanc/jjwt-test
     dockerfile: Dockerfile
     tag: latest
+
   unit_tests:
     image: ${{build_jjwt}}
     working-directory: ${{initial-clone}}
     fail-fast: false
     commands:
-        - echo $(date)
-        - env
-        - ls .
-        - echo "WHAT IS GOING ON!"
-        - echo foo > foo.txt
-        - echo After creation of file
-        - ls .
-        - echo $PWD
+      - echo $(date)
+      - env
+      - ls .
+      - echo "WHAT IS GOING ON!"
+      - echo foo > foo.txt
+      - echo After creation of file
+      - ls .
+      - echo $PWD
+
   validateFoo:
      image: ${{build_jjwt}}
      working-directory: ${{initial-clone}}
      commands:
-         - ls
+        - pwd
+        - ls
