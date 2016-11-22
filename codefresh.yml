@@ -17,7 +17,7 @@ steps:
     commands:
       - echo $(date)
       - env
-      - ls .
+      - ls /codefresh/volume/
       - echo "WHAT IS GOING ON!"
       - echo foo > /codefresh/volume/foo.txt
       - echo After creation of file
