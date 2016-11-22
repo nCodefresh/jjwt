@@ -19,7 +19,7 @@ steps:
       - env
       - ls .
       - echo "WHAT IS GOING ON!"
-      - echo foo > foo.txt
+      - echo foo > /codefresh/volume/foo.txt
       - echo After creation of file
       - ls .
       - echo $PWD
