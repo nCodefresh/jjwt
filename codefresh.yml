@@ -30,4 +30,4 @@ steps:
      commands:
         - pwd
         - ls
-        - cat foo.txt
+        - cat /codefresh/volume/foo.txt
